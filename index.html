@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	   <div class="wrap">
+			<header>
+				<button class="btn" id="resetBtn">Reset</button>
+				<button class="btn" id="screenshotBtn">Share</button>
+			</header>
+
+			<div class="champion-preview" id="championPreview">
+				<img class="champion-flag" id="championFlag" src="" alt="">
+			</div>
+
+			<div class="bracket-wrap" id="bracket">
+				<div class="round"><div class="round-label">Round of 32</div><div class="matches" id="r32-left"></div></div>
+				<div class="round"><div class="round-label">Round of 16</div><div class="matches" id="r16-left"></div></div>
+				<div class="round"><div class="round-label">Quarterfinal</div><div class="matches" id="qf-left"></div></div>
+				<div class="round"><div class="round-label">Semifinal</div><div class="matches" id="sf-left"></div></div>
+				<div class="round"><div class="round-label">Final</div><div class="matches" id="final-matches"></div></div>
+				<div class="round"><div class="round-label">Semifinal</div><div class="matches" id="sf-right"></div></div>
+				<div class="round"><div class="round-label">Quarterfinal</div><div class="matches" id="qf-right"></div></div>
+				<div class="round"><div class="round-label">Round of 16</div><div class="matches" id="r16-right"></div></div>
+				<div class="round"><div class="round-label">Round of 32</div><div class="matches" id="r32-right"></div></div>
+			</div>
+	   </div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
