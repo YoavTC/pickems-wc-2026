@@ -200,3 +200,31 @@ header {
 	color: var(--green);
 	font-weight: 900;
 }
+
+@media (max-width: 768px) {
+	html, body { height: 100dvh; }
+
+	.bracket-wrap {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scroll-snap-type: x proximity;
+	}
+
+	.round {
+		flex: 0 0 110px;
+		scroll-snap-align: start;
+	}
+
+	.match { width: 78px; }
+	.flag-img { height: 42px; }
+
+	.champion-preview { top: 80px; }
+	.champion-flag { width: 120px; height: 80px; }
+
+	header {
+		bottom: 12px;
+		gap: 8px;
+		padding-bottom: env(safe-area-inset-bottom);
+	}
+	.btn { padding: 6px 12px; font-size: 0.58rem; }
+}

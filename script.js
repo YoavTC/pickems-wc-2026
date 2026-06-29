@@ -89,20 +89,42 @@ function resetAll(){
 	render();
 }
 
-async function shareScreenshot(){
-	const header = document.querySelector('header');
-	header.style.visibility = 'hidden';
-	try{
-		const canvas = await html2canvas(document.querySelector('.wrap'), {
-			backgroundColor: getComputedStyle(document.body).backgroundColor
-		});
-		const blob = await new Promise(resolve => canvas.toBlob(resolve));
-		await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
-	}catch(err){
-		console.error('Screenshot failed', err);
-	}finally{
-		header.style.visibility = 'visible';
-	}
+async function shareScreenshot() {
+    const header = document.querySelector('header');
+    if (header) header.style.visibility = 'hidden'; // Added a null check just in case
+
+    try {
+        const canvas = await html2canvas(document.querySelector('.wrap'), {
+            backgroundColor: getComputedStyle(document.body).backgroundColor
+        });
+        
+        // Explicitly declare image/png
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+        
+        // Package the blob into a File object for the Web Share API
+        const file = new File([blob], 'screenshot.png', { type: 'image/png' });
+
+        // 1. Try Native Web Share API (Mobile)
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+                title: 'Screenshot',
+                files: [file]
+            });
+        } 
+        // 2. Fallback to Clipboard API (PC)
+        else if (navigator.clipboard) {
+            await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
+            alert('Screenshot copied to clipboard!'); // Optional feedback for PC users
+        } 
+        else {
+            throw new Error('Neither Share API nor Clipboard API is supported.');
+        }
+
+    } catch (err) {
+        console.error('Screenshot or share failed:', err);
+    } finally {
+        if (header) header.style.visibility = 'visible';
+    }
 }
 
 document.getElementById('screenshotBtn').addEventListener('click', shareScreenshot);
