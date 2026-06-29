@@ -1,23 +1,23 @@
 const CODES = {
-	'Germany':'DE','Paraguay':'PY','France':'FR','Sweden':'SE',
-	'South Africa':'ZA','Canada':'CA','Netherlands':'NL','Morocco':'MA',
-	'Portugal':'PT','Croatia':'HR','Spain':'ES','Austria':'AT',
-	'United States':'US','Bosnia and Herzegovina':'BA','Belgium':'BE','Senegal':'SN',
-	'Brazil':'BR','Japan':'JP','Ivory Coast':'CI','Norway':'NO',
-	'Mexico':'MX','Ecuador':'EC','England':'EN','DR Congo':'CD',
-	'Argentina':'AR','Cape Verde':'CV','Australia':'AU','Egypt':'EG',
-	'Switzerland':'CH','Algeria':'DZ','Colombia':'CO','Ghana':'GH'
+	'germany':'de','paraguay':'py','france':'fr','sweden':'se',
+	'south africa':'za','canada':'ca','netherlands':'nl','morocco':'ma',
+	'portugal':'pt','croatia':'hr','spain':'es','austria':'at',
+	'united states':'us','bosnia and herzegovina':'ba','belgium':'be','senegal':'sn',
+	'brazil':'br','japan':'jp','ivory coast':'ci','norway':'no',
+	'mexico':'mx','ecuador':'ec','england':'en','dr congo':'cd',
+	'argentina':'ar','cape verde':'cv','australia':'au','egypt':'eg',
+	'switzerland':'ch','algeria':'dz','colombia':'co','ghana':'gh'
 };
 
 const R32 = [
-	['Germany','Paraguay'],['France','Sweden'],
-	['South Africa','Canada'],['Netherlands','Morocco'],
-	['Portugal','Croatia'],['Spain','Austria'],
-	['United States','Bosnia and Herzegovina'],['Belgium','Senegal'],
-	['Brazil','Japan'],['Ivory Coast','Norway'],
-	['Mexico','Ecuador'],['England','DR Congo'],
-	['Argentina','Cape Verde'],['Australia','Egypt'],
-	['Switzerland','Algeria'],['Colombia','Ghana']
+	['germany','paraguay'],['france','sweden'],
+	['south africa','canada'],['netherlands','morocco'],
+	['portugal','croatia'],['spain','austria'],
+	['united states','bosnia and herzegovina'],['belgium','senegal'],
+	['brazil','japan'],['ivory coast','norway'],
+	['mexico','ecuador'],['england','dr congo'],
+	['argentina','cape verde'],['australia','egypt'],
+	['switzerland','algeria'],['colombia','ghana']
 ];
 
 let matches = {};
